@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === SHADCN/UI CSS VARIABLES === */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 24.6 94.9% 53.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family, 'Inter', ui-sans-serif, system-ui, sans-serif);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* === 6 TEMPLATES MENU CLIENT === */
+/* Usage: <html data-template="aurora_glass"> */
+
+[data-template="aurora_glass"] {
+  --bg-primary:    #0D1B2A;
+  --bg-secondary:  #112236;
+  --accent:        #2DD4BF;
+  --text-primary:  #F5F5F5;
+  --text-secondary:#8DA4BC;
+  --card-bg:       #152840;
+  --card-border:   #1E3550;
+}
+
+[data-template="bento_menu"] {
+  --bg-primary:    #F5F5F5;
+  --bg-secondary:  #FFFFFF;
+  --accent:        #22C55E;
+  --text-primary:  #1A1A1A;
+  --text-secondary:#9CA3AF;
+  --card-bg:       #FFFFFF;
+  --card-border:   #EFEFEF;
+}
+
+[data-template="classic_theme"] {
+  --bg-primary:    #F8F8F6;
+  --bg-secondary:  #FFFFFF;
+  --accent:        #FF6B35;
+  --text-primary:  #1A1A1A;
+  --text-secondary:#9CA3AF;
+  --card-bg:       #FFFFFF;
+  --card-border:   #EFEFEF;
+}
+
+[data-template="dark_sleek"] {
+  --bg-primary:    #0E0E0F;
+  --bg-secondary:  #1A1A1B;
+  --accent:        #FF5C35;
+  --text-primary:  #F5F5F5;
+  --text-secondary:#A0A0A0;
+  --card-bg:       #1E1E1F;
+  --card-border:   #2A2A2B;
+}
+
+[data-template="editorial_menu"] {
+  --bg-primary:    #F9F7F4;
+  --bg-secondary:  #F2EFE8;
+  --accent:        #1A1A1A;
+  --text-primary:  #1A1A1A;
+  --text-secondary:#6B6B6B;
+  --card-bg:       #FFFFFF;
+  --card-border:   #E0DDD8;
+}
+
+[data-template="modern_theme"] {
+  --bg-primary:    #F7F7F7;
+  --bg-secondary:  #FFFFFF;
+  --accent:        #6C47FF;
+  --text-primary:  #1A1A1A;
+  --text-secondary:#9CA3AF;
+  --card-bg:       #FFFFFF;
+  --card-border:   #EFEFEF;
+}
+
+/* === RTL SUPPORT === */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* === CUSTOM UTILITIES === */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .template-bg {
+    background-color: var(--bg-primary);
+  }
+
+  .template-card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+  }
+
+  .template-accent {
+    color: var(--accent);
+  }
+
+  .template-text {
+    color: var(--text-primary);
+  }
+
+  .template-text-secondary {
+    color: var(--text-secondary);
+  }
+}
